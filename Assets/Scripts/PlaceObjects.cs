@@ -11,8 +11,10 @@ public class PlaceObjects : MonoBehaviour{
     }
     private void Update(){
       PositionObject();
-      if(Input.GetMouseButtonDown(0))
+      if(Input.GetMouseButtonDown(0)){
+        gameObject.GetComponent<CreateCar>().enabled = true;
         Destroy(gameObject.GetComponent<PlaceObjects>());
+      }
       if(Input.GetKey(KeyCode.R))
         transform.Rotate(Vector3.up * rotSpeed * Time.deltaTime);
     }

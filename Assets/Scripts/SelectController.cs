@@ -31,6 +31,8 @@ public class SelectController : MonoBehaviour{
       if(Input.GetMouseButtonUp(0) && cubeSelection){
         RaycastHit[] hits = Physics.BoxCastAll(cubeSelection.transform.position, cubeSelection.transform.localScale, Vector3.up, Quaternion.identity, 0, layerMask);
         foreach(var element in hits){
+          if(element.collider.CompareTag("Enemy"))
+            continue;
           players.Add(element.transform.gameObject);
           element.transform.GetChild(0).gameObject.SetActive(true);
         }
