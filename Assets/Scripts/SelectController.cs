@@ -18,7 +18,8 @@ public class SelectController : MonoBehaviour{
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit agentTarget, 1000f, layer))
           foreach(var element in players)
-            element.GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(agentTarget.point);
+            if(element != null)
+              element.GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(agentTarget.point);
       }
       if(Input.GetMouseButtonDown(0)){
         foreach(var element in players)

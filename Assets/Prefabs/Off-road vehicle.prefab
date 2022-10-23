@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &659141974758986442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7878883248855163028}
+  m_Layer: 0
+  m_Name: BulletPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7878883248855163028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659141974758986442}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.11, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7574856985513561399}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &677102833926024338
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +313,7 @@ Transform:
   - {fileID: 4008724276455571210}
   - {fileID: 7402477357536644708}
   m_Father: {fileID: 7574856985513561399}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3273980757991200636
 GameObject:
@@ -315,7 +346,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7574856985513561399}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1196070128507200673
 MeshFilter:
@@ -395,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 4876041893964639260}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.4, z: 0}
-  m_LocalScale: {x: 2, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1.5, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7574856985513561399}
@@ -495,7 +526,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7574856985513561399}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3360588792200966651
 MeshFilter:
@@ -641,6 +672,8 @@ GameObject:
   - component: {fileID: 7574856985513561399}
   - component: {fileID: 7545560645343591425}
   - component: {fileID: 4988319402582304399}
+  - component: {fileID: 7651256396513678819}
+  - component: {fileID: 4455601838254186264}
   m_Layer: 6
   m_Name: Off-road vehicle
   m_TagString: Player
@@ -661,6 +694,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3011286933786706883}
+  - {fileID: 7878883248855163028}
   - {fileID: 2803771889412495546}
   - {fileID: 7697606255866220374}
   - {fileID: 5195593846249484585}
@@ -703,6 +737,37 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7651256396513678819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085460630238156685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5988071a5ab4d2241862bc6e56c98155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 70
+  bullet: {fileID: 5909258369156955119, guid: 6403a89752eb0bd4c80e1c8eab19f54b, type: 3}
+  health: 100
+--- !u!54 &4455601838254186264
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085460630238156685}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7846259950683624633
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +799,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7574856985513561399}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &698846985589310987
 MeshFilter:
